@@ -1,4 +1,5 @@
-const locationReducer = (state = { locations: [], loading: false }, action) => {
+const locationReducer = (state = [], action) => {
+  // console.log('locationReducer');
   switch (action.type) {
     case 'LOADING_LOCATIONS':
       return {
@@ -7,6 +8,8 @@ const locationReducer = (state = { locations: [], loading: false }, action) => {
         loading: true,
       };
     case 'FETCH_LOCATIONS':
+      // debugger;
+      console.log(action);
       return { ...state, locations: action.payload };
     default:
       return state;
