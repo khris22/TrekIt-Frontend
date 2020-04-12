@@ -4,13 +4,22 @@ import Locations from '../components/Locations';
 import { connect } from 'react-redux';
 import { fetchLocations } from '../actions/locationActions';
 
-export class Location extends Component {
+class Location extends Component {
   componentDidMount() {
     this.props.fetchLocations();
-    console.log('Inside ComponenDidMount');
   }
 
+  // CAUSING ERROR:
+  // handleLoading = () => {
+  //   if (this.props.loading) {
+  //     return <h2>LOADING......</h2>;
+  //   } else {
+  //     return <Locations locations={this.props.locations} />;
+  //   }
+  // };
+
   render() {
+    // debugger;
     return (
       <div>
         <h1>In Location Container</h1>
@@ -23,12 +32,13 @@ export class Location extends Component {
 
 const mapStateToProps = (state) => ({
   locations: state.locations,
-  loading: state.loading,
+  // loading: state.loading,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchLocations: () => dispatch(fetchLocations()),
-  // addLocation: (formData) => dispatch({ type: 'ADD_RESTAURANT'}, formData)
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   fetchLocations: () => dispatch(fetchLocations()),
+//   // addLocation: (formData) => dispatch({ type: 'ADD_RESTAURANT'}, formData)
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Location);
+// export default connect(mapStateToProps, mapDispatchToProps)(Location);
+export default connect(mapStateToProps, { fetchLocations })(Location);

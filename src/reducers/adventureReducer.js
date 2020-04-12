@@ -1,4 +1,4 @@
-const adventureReducer = (state = { adventures: [] }, action) => {
+const adventureReducer = (state = [], action) => {
   switch (action.type) {
     default:
       return state;
