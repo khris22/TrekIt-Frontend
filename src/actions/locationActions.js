@@ -10,3 +10,18 @@ export const fetchLocations = () => {
       });
   };
 };
+export const addLocation = (data) => {
+  // debugger;
+  return (dispatch) => {
+    fetch('http://localhost:3000/api/v1/locations', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((resp) => resp.json())
+      .then((newLocationData) => {
+        // debugger;
+        dispatch({ type: 'ADD_LOCATION', payload: newLocationData });
+      });
+  };
+};
