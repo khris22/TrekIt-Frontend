@@ -9,18 +9,18 @@ import thunk from 'redux-thunk';
 // import rootReducer from './reducers/index';
 import locationReducer from './reducers/locationReducer';
 // import adventureReducer from './reducers/adventureReducer';
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const rootReducer = combineReducers({
-  locations: locationReducer,
-  // adventures: adventureReducer
-});
+// const rootReducer = combineReducers({
+//   locationReducer,
+//   // adventures: adventureReducer
+// });
 
 const store = createStore(
-  rootReducer,
-  // locationReducer,
+  // rootReducer,
+  locationReducer,
   composeEnhancers(applyMiddleware(thunk)),
 );
 

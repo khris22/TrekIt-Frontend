@@ -1,4 +1,4 @@
-const locationReducer = (state = [], action) => {
+const locationReducer = (state = { locations: [] }, action) => {
   // console.log('locationReducer');
   switch (action.type) {
     case 'LOADING_LOCATIONS':
