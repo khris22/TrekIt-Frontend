@@ -1,5 +1,6 @@
 import React from 'react';
-import LocationList from './LocationList';
+import Location from './Location';
+import { Route } from 'react-router-dom';
 
 const Locations = (props) => {
   console.log('In components Locations');
@@ -13,8 +14,9 @@ const Locations = (props) => {
       <h3>Inside Locations (Index)</h3>
       {/* <ul>{locationData}</ul> */}
       {props.locations.map((loc) => (
-        <LocationList key={loc.id} location={loc} />
+        <Location key={loc.id} location={loc} />
       ))}
+      {/* <Route path='/locations/:id' render={() => <Location location={loc}/> }></Route> */}
     </div>
   );
 };

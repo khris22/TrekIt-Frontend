@@ -3,6 +3,7 @@ import LocationInput from '../components/LocationInput';
 import Locations from '../components/Locations';
 import { connect } from 'react-redux';
 import { fetchLocations } from '../actions/locationActions';
+// import { Route } from 'react-router-dom';
 
 class Location extends Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ class Location extends Component {
     return (
       <div>
         <h1>In Location Container</h1>
+
         <LocationInput />
         <Locations locations={this.props.locations} />
       </div>
