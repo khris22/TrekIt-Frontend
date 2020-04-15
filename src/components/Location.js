@@ -5,6 +5,7 @@ const LocationList = ({ location }) => {
   console.log(location);
   return (
     <div>
+      {/* <h1>IN LOCATION.JS</h1> */}
       <li>{location.park}</li>
     </div>
   );

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import LocationInput from '../components/LocationInput';
 import Locations from '../components/Locations';
+import LocationShow from '../components/LocationShow';
 import { connect } from 'react-redux';
 import { fetchLocations } from '../actions/locationActions';
-// import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 class Location extends Component {
   componentDidMount() {
@@ -24,9 +25,35 @@ class Location extends Component {
     return (
       <div>
         <h1>In Location Container</h1>
+        {/* <LocationInput /> */}
+        <Switch>
+          <Route
+            path='/'
+            render={(routerProps) => {
+              console.log(routerProps.match);
+              return (
+                <Locations {...routerProps} locations={this.props.locations} />
+              );
+            }}
+          />
+          <Route
+            path='/:id'
+            render={(routerProps) => {
+              // <Locations {...routerProps} locations={this.props.locations} />
 
-        <LocationInput />
-        <Locations locations={this.props.locations} />
+              // console.log(routerProps.match);
+              return (
+                <LocationShow
+                  {...routerProps}
+                  locations={this.props.locations}
+                />
+              );
+            }}
+          />
+          <Route path='/new' component={LocationInput} />
+        </Switch>
+
+        {/* <Locations locations={this.props.locations} /> */}
       </div>
     );
   }
