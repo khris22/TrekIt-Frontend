@@ -16,7 +16,7 @@ export class AdventureInput extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     // Add actions here to dispatch
-    this.props.addAdventure();
+    this.props.addAdventure(this.state, this.props.location.id);
     this.setState({
       title: '',
       memo: '',
