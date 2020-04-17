@@ -27,7 +27,7 @@ export class AdventureInput extends Component {
   render() {
     return (
       <div>
-        <h3>ADVENTUREINPUT</h3>
+        <h3>Add a New Adventure:</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Title: </label>
           <input

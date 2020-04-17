@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addLocation } from '../actions/locationActions';
+import { addLocation } from '../../actions/locationActions';
 
 export class LocationInput extends Component {
   state = {
@@ -44,5 +44,4 @@ export class LocationInput extends Component {
   }
 }
 
-// export default LocationInput;
 export default connect(null, { addLocation })(LocationInput);

@@ -8,11 +8,11 @@ export class Adventure extends Component {
   render() {
     return (
       <div>
-        <h1>In Adventure Container</h1>
+        <h5>Your Adventures:</h5>
         <Adventures />
         <AdventureInput
           addAdventure={this.props.addAdventure}
-          locationId={console.log(this.props.id)}
+          locationId={console.log(this.props)}
         />
       </div>
     );

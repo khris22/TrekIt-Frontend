@@ -13,10 +13,8 @@ class App extends Component {
       <div className='App'>
         <h1>trekIt</h1>
         <Navbar />
-        {/* <Route exact path='/' /> */}
         <Route exact path='/about' component={About} />
         <Route path='/locations' component={Location} />
-        {/* <Location /> */}
       </div>
     );
   }

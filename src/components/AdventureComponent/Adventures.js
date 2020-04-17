@@ -3,7 +3,7 @@ import React from 'react';
 const Adventures = () => {
   return (
     <div>
-      <h2>ADVENTURES LIST</h2>
+      <h4>Show list of past adventures here in Adventures.js</h4>
     </div>
   );
 };
