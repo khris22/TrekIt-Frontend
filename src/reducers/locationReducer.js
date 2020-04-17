@@ -15,6 +15,16 @@ const locationReducer = (state = { locations: [] }, action) => {
     case 'ADD_LOCATION':
       // debugger;
       return { ...state, locations: [...state.locations, action.payload] };
+
+    case 'ADD_ADVENTURE':
+      let locations = state.locations.map((loc) => {
+        if (loc.id === action.payload.id) {
+          return action.payload;
+        } else {
+          return loc;
+        }
+      });
+      return { ...state, locations: locations };
     default:
       return state;
   }
