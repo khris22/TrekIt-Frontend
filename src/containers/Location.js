@@ -24,9 +24,9 @@ class Location extends Component {
     // debugger;
     return (
       <div>
-        <LocationInput />
+        {/* <LocationInput /> */}
         <Switch>
-          {/* <Route path='/locations/new' component={LocationInput} /> */}
+          <Route path='/locations/new' component={LocationInput} />
           <Route
             path='/locations/:id'
             render={(routerProps) => {
