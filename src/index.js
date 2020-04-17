@@ -12,17 +12,19 @@ import locationReducer from './reducers/locationReducer';
 // import { combineReducers } from 'redux';
 
 import { BrowserRouter as Router } from 'react-router-dom';
+// import adventureReducer from './reducers/adventureReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // const rootReducer = combineReducers({
 //   locationReducer,
-//   // adventures: adventureReducer
+//   adventureReducer
 // });
 
 const store = createStore(
   // rootReducer,
   locationReducer,
+  // adventureReducer,
   composeEnhancers(applyMiddleware(thunk)),
 );
 
