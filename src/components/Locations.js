@@ -2,6 +2,7 @@ import React from 'react';
 // import Location from './Location';
 import { Link } from 'react-router-dom';
 // import { Route } from 'react-router-dom';
+// import LocationShow from '../components/LocationShow';
 
 const Locations = (props) => {
   console.log('In components Locations');
@@ -19,11 +20,13 @@ const Locations = (props) => {
       <Route path='/:id' render={() => <Location />}></Route> */}
 
       {props.locations.map((loc) => (
-        <Link key={loc.id} to={`/${loc.id}`}>
-          {/* <Location key={loc.id} location={loc} /> */}
-          <li>{loc.park}</li>
+        <Link key={loc.id} to={`/locations/${loc.id}`}>
+          {' '}
+          {loc.park}
         </Link>
       ))}
+      {/* <Location key={loc.id} location={loc} /> */}
+      {/* <Route path={`/locations/:id`} component={LocationShow} /> */}
     </div>
   );
 };

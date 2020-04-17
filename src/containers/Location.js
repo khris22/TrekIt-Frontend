@@ -27,17 +27,10 @@ class Location extends Component {
         <h1>In Location Container</h1>
         {/* <LocationInput /> */}
         <Switch>
+          {/* <Route exact path='/' component={Home} /> */}
+          <Route path='/new' component={LocationInput} />
           <Route
-            path='/'
-            render={(routerProps) => {
-              console.log(routerProps.match);
-              return (
-                <Locations {...routerProps} locations={this.props.locations} />
-              );
-            }}
-          />
-          <Route
-            path='/:id'
+            path='/locations/:id'
             render={(routerProps) => {
               // <Locations {...routerProps} locations={this.props.locations} />
 
@@ -50,7 +43,15 @@ class Location extends Component {
               );
             }}
           />
-          <Route path='/new' component={LocationInput} />
+          <Route
+            path='/locations'
+            render={(routerProps) => {
+              // console.log(routerProps.match);
+              return (
+                <Locations {...routerProps} locations={this.props.locations} />
+              );
+            }}
+          />
         </Switch>
 
         {/* <Locations locations={this.props.locations} /> */}
