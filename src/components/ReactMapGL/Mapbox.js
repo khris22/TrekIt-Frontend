@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 
+// import tent02 from '../../tent02.png';
+import tent01 from '../../tent01.svg';
+
 function Mapbox(props) {
   console.log('INSIDE MAPBOX', props);
 
@@ -31,7 +34,7 @@ function Mapbox(props) {
             loc.lat && loc.long ? (
               <Marker key={loc.id} latitude={loc.lat} longitude={loc.long}>
                 <button className='marker-btn'>
-                  <img src={'public/map-marker.svg'} alt='MapMarker' />
+                  <img src={tent01} alt='MapMarker' />
                 </button>
               </Marker>
             ) : null,
