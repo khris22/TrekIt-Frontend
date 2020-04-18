@@ -15,7 +15,7 @@ const Locations = (props) => {
       {props.locations.map((loc) => (
         <Link key={loc.id} to={`/locations/${loc.id}`}>
           {' '}
-          {loc.park}
+          <li>{loc.park}</li>
         </Link>
       ))}
     </div>
