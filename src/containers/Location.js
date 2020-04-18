@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import LocationInput from '../components/LocationComponent/LocationInput';
 import Locations from '../components/LocationComponent/Locations';
 import LocationShow from '../components/LocationComponent/LocationShow';
 import { connect } from 'react-redux';
 import { fetchLocations } from '../actions/locationActions';
 import { Route, Switch } from 'react-router-dom';
+// import MapBox from '../mapboxAndReact/MapBox';
+import Mapbox from '../components/ReactMapGL/Mapbox';
 
 class Location extends Component {
   componentDidMount() {
@@ -24,9 +26,10 @@ class Location extends Component {
     // debugger;
     return (
       <div>
+        {/* <MapBox /> */}
         {/* <LocationInput /> */}
         <Switch>
-          <Route path='/locations/new' component={LocationInput} />
+          {/* <Route path='/locations/new' component={LocationInput} /> */}
           <Route
             path='/locations/:id'
             render={(routerProps) => {
@@ -42,7 +45,15 @@ class Location extends Component {
             path='/locations'
             render={(routerProps) => {
               return (
-                <Locations {...routerProps} locations={this.props.locations} />
+                <Fragment>
+                  <LocationInput />
+                  {/* <MapBox /> */}
+                  <Mapbox {...routerProps} locations={this.props.locations} />
+                  <Locations
+                    {...routerProps}
+                    locations={this.props.locations}
+                  />
+                </Fragment>
               );
             }}
           />
