@@ -1,0 +1,31 @@
+.sidebarStyle {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  background-color: #404040;
+  color: #ffffff;
+  z-index: 1 !important;
+  padding: 6px;
+  font-weight: bold;
+}
+
+.mapContainer {
+  position: relative;
+  text-align: center;
+  top: 0;
+  right: 50px;
+  left: 50px;
+  bottom: 0;
+}
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.marker-btn img {
+  width: 40px;
+  height: 40px;
+}
