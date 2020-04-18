@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactMapGL, { Marker } from 'react-map-gl';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 
 // import tent02 from '../../tent02.png';
 import tent01 from '../../tent01.svg';
@@ -15,7 +15,8 @@ function Mapbox(props) {
     zoom: 3,
   });
 
-  //   const [selectedPark, setSelectedPark] =
+  const [selectedPark, setSelectedPark] = useState(null);
+
   return (
     <div className='mapContainer'>
       <h2>MAP HERE</h2>
@@ -33,12 +34,30 @@ function Mapbox(props) {
           props.locations.map((loc) =>
             loc.lat && loc.long ? (
               <Marker key={loc.id} latitude={loc.lat} longitude={loc.long}>
-                <button className='marker-btn'>
+                <button
+                  className='marker-btn'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setSelectedPark(loc);
+                  }}>
                   <img src={tent01} alt='MapMarker' />
                 </button>
               </Marker>
             ) : null,
           )}
+
+        {selectedPark ? (
+          <Popup
+            latitude={selectedPark.lat}
+            longitude={selectedPark.long}
+            onClose={() => {
+              setSelectedPark(null);
+            }}>
+            <>
+              <h5>{selectedPark.park}</h5>
+            </>
+          </Popup>
+        ) : null}
       </ReactMapGL>
     </div>
   );
