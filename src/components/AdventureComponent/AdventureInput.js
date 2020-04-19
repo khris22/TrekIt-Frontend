@@ -39,8 +39,8 @@ export class AdventureInput extends Component {
           />
           <br />
           <label>Memory: </label>
-          <input
-            type='text'
+          <textarea
+            // type='text'
             name='memo'
             placeholder='memo'
             value={this.state.memo}

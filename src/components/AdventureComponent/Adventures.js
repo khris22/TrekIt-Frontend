@@ -3,7 +3,7 @@ import React from 'react';
 
 const Adventures = (props) => {
   //   debugger;
-  console.log('ADVENTURE', props.adventures);
+  // console.log('ADVENTURE', props.adventures);
   //   const adventure = props.adventures;
   return (
     <div>
