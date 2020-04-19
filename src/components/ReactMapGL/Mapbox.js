@@ -3,10 +3,10 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 
 // import tent02 from '../../tent02.png';
 import tent01 from '../../tent01.svg';
+// import Geocoder from 'react-map-gl-geocoder';
+// import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 function Mapbox(props) {
-  console.log('INSIDE MAPBOX', props);
-
   const [viewport, setViewport] = useState({
     width: 900,
     height: 400,

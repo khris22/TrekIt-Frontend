@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import LocationInput from '../components/LocationComponent/LocationInput';
+// import LocationInput from '../components/LocationComponent/LocationInput';
 import Locations from '../components/LocationComponent/Locations';
 import LocationShow from '../components/LocationComponent/LocationShow';
 import { connect } from 'react-redux';
@@ -7,6 +7,7 @@ import { fetchLocations } from '../actions/locationActions';
 import { Route, Switch } from 'react-router-dom';
 // import MapBox from '../mapboxAndReact/MapBox';
 import Mapbox from '../components/ReactMapGL/Mapbox';
+import GeoLocationInput from '../components/LocationComponent/GeoLocationInput';
 
 class Location extends Component {
   componentDidMount() {
@@ -46,8 +47,9 @@ class Location extends Component {
             render={(routerProps) => {
               return (
                 <Fragment>
-                  <LocationInput />
+                  {/* <LocationInput /> */}
                   {/* <MapBox /> */}
+                  <GeoLocationInput />
                   <Mapbox {...routerProps} locations={this.props.locations} />
                   <Locations
                     {...routerProps}
