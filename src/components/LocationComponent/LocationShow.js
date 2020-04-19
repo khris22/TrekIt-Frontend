@@ -6,7 +6,7 @@ const LocationShow = (props) => {
     ({ id }) => id === parseInt(props.match.params.id),
   );
 
-  console.log('INSIDE SHOW PAGE', location);
+  // console.log('INSIDE SHOW PAGE', location);
   return (
     <div>
       <h2>{location ? location.park : <p>LOADING</p>}</h2>

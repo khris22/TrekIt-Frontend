@@ -5,9 +5,9 @@ import Geocoder from 'react-mapbox-gl-geocoder';
 import { connect } from 'react-redux';
 import { addLocation } from '../../actions/locationActions';
 
-const queryParams = {
-  country: 'us',
-};
+// const queryParams = {
+//   country: 'us',
+// };
 
 class GeoLocationInput extends Component {
   //   state = {
@@ -52,25 +52,29 @@ class GeoLocationInput extends Component {
     });
   };
 
+  myInput = (props) => (
+    <input {...props} placeholder='Search here...' value={undefined} />
+  );
+
   render() {
     // const { viewport } = this.state;
     return (
       <div>
-        <h5>
-          --- Search the park here: --
-          <Geocoder
-            mapboxApiAccessToken={
-              'pk.eyJ1Ijoia2hyaXNwdW56YWxhbiIsImEiOiJjazk0azhuNXowZHZyM2hvbThiZThnMTg4In0.WqfOYiH8M18koMjFjwZTEg'
-            }
-            onSelected={this.onSelected}
-            viewport={this.state}
-            // value={this.state || ''}
-            hideOnSelect={true}
-            updateInputOnSelect={false}
-            // clearOnBlur={true}
-            className='react-geocoder'
-            queryParams={queryParams}></Geocoder>
-        </h5>
+        <h5> --- Search the park here: -- </h5>
+        <Geocoder
+          mapboxApiAccessToken={
+            'pk.eyJ1Ijoia2hyaXNwdW56YWxhbiIsImEiOiJjazk0azhuNXowZHZyM2hvbThiZThnMTg4In0.WqfOYiH8M18koMjFjwZTEg'
+          }
+          onSelected={this.onSelected}
+          viewport={this.state}
+          value={this.state || ''}
+          hideOnSelect={true}
+          // updateInputOnSelect={true}
+          // initialInputValue=''
+          inputComponent={this.myInput}
+          // queryParams={queryParams}
+        ></Geocoder>
+
         <>
           <form onSubmit={this.handleSubmit}>
             <input
