@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import Location from '../src/containers/Location';
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar_components/Navbar';
 // import Home from './Home';
 import About from './components/navbar_components/About';
+import Home from './components/navbar_components/Home';
 // import MapBox from './mapboxAndReact/MapBox';
 
 class App extends Component {
@@ -14,9 +15,12 @@ class App extends Component {
       <div className='App'>
         <h1>trekIt</h1>
         <Navbar />
-        <Route exact path='/about' component={About} />
-        <Route path='/locations' component={Location} />
-        {/* <MapBox /> */}
+        <Switch>
+          <Route exact path='/about' component={About} />
+          <Route exact path='/' component={Home} />
+          <Route path='/locations' component={Location} />
+          {/* <MapBox /> */}
+        </Switch>
       </div>
     );
   }
