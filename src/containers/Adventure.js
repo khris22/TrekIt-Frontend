@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Adventures from '../components/AdventureComponent/Adventures';
 import AdventureInput from '../components/AdventureComponent/AdventureInput';
 import { connect } from 'react-redux';
-import { addAdventure, deleteAdventure } from '../actions/adventureActions';
+import { addAdventure } from '../actions/adventureActions';
 
 export class Adventure extends Component {
   render() {
@@ -15,7 +15,7 @@ export class Adventure extends Component {
         />
         <Adventures
           adventures={this.props.location && this.props.location.adventures}
-          deleteAdventure={this.props.deleteAdventure}
+          // deleteAdventure={this.props.deleteAdventure}
         />
       </div>
     );
@@ -29,4 +29,4 @@ export class Adventure extends Component {
 //   Adventure,
 // );
 
-export default connect(null, { addAdventure, deleteAdventure })(Adventure);
+export default connect(null, { addAdventure })(Adventure);

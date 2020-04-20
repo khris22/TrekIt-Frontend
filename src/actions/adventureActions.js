@@ -12,4 +12,18 @@ export const addAdventure = (adventure, locationId) => {
   };
 };
 
-export const deleteAdventure = (params) => {};
+export const deleteAdventure = (advId, locId) => {
+  console.log('INSIDE DELETE ACTION');
+  return (dispatch) => {
+    fetch(
+      `http://localhost:3000/api/v1/locations/${locId}/adventures/${advId}`,
+      {
+        method: 'DELETE',
+      },
+    )
+      .then((res) => res.json())
+      .then((location) =>
+        dispatch({ type: 'DELETE_ADVENTURE', payload: location }),
+      );
+  };
+};
