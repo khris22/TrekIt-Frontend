@@ -22,11 +22,4 @@ export class Adventure extends Component {
   }
 }
 
-// export const mapStateToProps = ({ adventures }) => ({ adventures });
-
-// export default Adventure;
-// export default connect(mapStateToProps, { addAdventure, deleteAdventure })(
-//   Adventure,
-// );
-
 export default connect(null, { addAdventure })(Adventure);

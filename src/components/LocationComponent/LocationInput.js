@@ -5,9 +5,8 @@ import { addLocation } from '../../actions/locationActions';
 export class LocationInput extends Component {
   state = {
     park: '',
-    // image: '',
-    // lat: '',
-    // long: '',
+    lat: '',
+    long: '',
   };
 
   handleChange = (e) => {
@@ -35,7 +34,6 @@ export class LocationInput extends Component {
             placeholder='Park'
             value={this.state.park}
             onChange={this.handleChange}
-            // name='text'
           />
           <input type='submit' />
         </form>

@@ -15,7 +15,6 @@ export class AdventureInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // Add actions here to dispatch
     this.props.addAdventure(this.state, this.props.location.id);
     this.setState({
       title: '',
@@ -40,7 +39,6 @@ export class AdventureInput extends Component {
           <br />
           <label>Memory: </label>
           <textarea
-            // type='text'
             name='memo'
             placeholder='memo'
             value={this.state.memo}

@@ -20,7 +20,6 @@ class GeoLocationInput extends Component {
   };
 
   onSelected = (viewport, location) => {
-    // debugger;
     console.log('Selected: ', location);
     console.log('Name of park: ', location.text);
     console.log('Latitude: ', location.geometry.coordinates[1]);

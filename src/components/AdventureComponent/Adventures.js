@@ -1,12 +1,8 @@
 import React from 'react';
-// import Adventure from './Adventure';
 import { connect } from 'react-redux';
 import { deleteAdventure } from '../../actions/adventureActions';
 
 const Adventures = (props) => {
-  //   debugger;
-  // console.log('ADVENTURE', props.adventures);
-  //   const adventure = props.adventures;
 
   const handleDelete = (adv) => {
     console.log(adv);

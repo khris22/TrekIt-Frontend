@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-
-// import tent02 from '../../tent02.png';
 import tent01 from '../../tent01.svg';
 // import Geocoder from 'react-map-gl-geocoder';
 // import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
