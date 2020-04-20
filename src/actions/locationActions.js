@@ -20,3 +20,16 @@ export const addLocation = (data) => {
       });
   };
 };
+
+export const deleteLocation = (locId) => {
+  console.log('Inside Action');
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/locations/${locId}`, {
+      method: 'DELETE',
+    })
+      .then((res) => res.json())
+      .then((location) =>
+        dispatch({ type: 'DELETE_LOCATION', payload: location }),
+      );
+  };
+};
