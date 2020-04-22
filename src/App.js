@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import Location from '../src/containers/Location';
 // import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import Navbar from './components/navbar_components/Navbar';
-import About from './components/navbar_components/About';
-import Home from './components/navbar_components/Home';
+import Navbar from './components/NavbarComponents/Navbar';
+import About from './components/NavbarComponents/About';
+import Home from './components/NavbarComponents/Home';
+import Footer from './components/FooterComponent';
 
 class App extends Component {
   render() {
     return (
-      <div className='App'>
+      <div className='ui container App '>
         <h1>trekIt</h1>
         <Navbar />
         <Switch>
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/locations' component={Location} />
         </Switch>
+        <Footer />
       </div>
     );
   }
