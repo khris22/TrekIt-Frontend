@@ -8,7 +8,6 @@ export class Adventure extends Component {
   render() {
     return (
       <div>
-        <h5>Your Adventures:</h5>
         <AdventureInput
           addAdventure={this.props.addAdventure}
           location={this.props.location}
