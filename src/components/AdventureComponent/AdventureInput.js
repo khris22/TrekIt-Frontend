@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form } from 'semantic-ui-react';
 
 export class AdventureInput extends Component {
   state = {
@@ -27,37 +28,43 @@ export class AdventureInput extends Component {
     return (
       <div>
         <h3>Add a New Adventure:</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>Title: </label>
-          <input
-            type='text'
-            name='title'
-            placeholder='title'
-            value={this.state.title}
-            onChange={this.handleChange}
-          />
-          <br />
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group widths='equal'>
+            <Form.Input
+              type='text'
+              name='title'
+              fluid
+              label='Title:'
+              placeholder='Give your adventure a title!'
+              value={this.state.title}
+              onChange={this.handleChange}
+              required
+            />
+            <Form.Input
+              type='text'
+              name='image'
+              fluid
+              label='Image Url:'
+              placeholder='Attached the image url here.'
+              value={this.state.image}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
           <label>Memory: </label>
-          <textarea
+          <Form.TextArea
             name='memo'
-            placeholder='memo'
+            placeholder='Tell me all about your adventure...'
             value={this.state.memo}
             onChange={this.handleChange}
           />
-          <br />
-          <label>Image Url: </label>
 
           {/* check if this is right? */}
-          <input
-            type='text'
-            name='image'
-            placeholder='image url'
-            value={this.state.image}
-            onChange={this.handleChange}
-          />
-          <br />
-          <input type='submit' />
-        </form>
+          <center>
+            <Form.Button color='google plus' type='submit'>
+              Add this adventure to your list
+            </Form.Button>
+          </center>
+        </Form>
       </div>
     );
   }
