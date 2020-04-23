@@ -1,39 +1,30 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { deleteAdventure } from '../../actions/adventureActions';
+
+import { Divider } from 'semantic-ui-react';
+// import Moment from 'react-moment';
+import AdventureCard from './AdventureCard';
 
 const Adventures = (props) => {
+  // console.log(props);
 
-  const handleDelete = (adv) => {
-    console.log(adv);
-    props.deleteAdventure(adv.id, adv.location_id);
-  };
+  // const handleEdit = (adv) => {
+  //   console.log('EDIT ADVENTURE', adv);
+  // };
 
   return (
     <div>
-      <h4>Show list of past adventures here in Adventures.js</h4>
+      <Divider />
+      <h4>Here are your adventures for this location:</h4>
       {props.adventures &&
         props.adventures.map((adv) => (
-          <li key={adv.id}>
-            {adv.title}
-            <p> {adv.memo}</p>
-            <p>{adv.image}</p>
-            <button
-              onClick={() => {
-                window.confirm(
-                  'Are you sure you wish to delete this Adventure?',
-                ) && handleDelete(adv);
-              }}>
-              Delete this Adventure
-            </button>
-          </li>
+          <AdventureCard key={adv.id} adventure={adv} />
         ))}
     </div>
   );
 };
 
-// export default Adventures;
-export default connect(null, { deleteAdventure })(Adventures);
+export default Adventures;
+// export default connect(null, { deleteAdventure })(Adventures);
 // Fragment - can reduce a lot of unnecessary DOM bloat
 // <React.Fragment key={adv.id}
 // </React.Fragment>
