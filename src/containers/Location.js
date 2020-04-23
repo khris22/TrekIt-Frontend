@@ -33,8 +33,8 @@ class Location extends Component {
             render={(routerProps) => {
               return (
                 <Fragment>
-                  <GeoLocationInput />
                   <Mapbox {...routerProps} locations={this.props.locations} />
+                  <GeoLocationInput />
                   <Locations
                     {...routerProps}
                     locations={this.props.locations}

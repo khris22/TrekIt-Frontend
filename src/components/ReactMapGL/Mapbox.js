@@ -3,10 +3,11 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import tent01 from '../../tent01.svg';
 // import Geocoder from 'react-map-gl-geocoder';
 // import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import { Segment, Header, Divider } from 'semantic-ui-react';
 
 function Mapbox(props) {
   const [viewport, setViewport] = useState({
-    width: 900,
+    width: '100%',
     height: 400,
     latitude: 39.3563,
     longitude: -96.3543,
@@ -16,47 +17,54 @@ function Mapbox(props) {
   const [selectedPark, setSelectedPark] = useState(null);
 
   return (
-    <div className='mapContainer'>
-      <h2>MAP HERE</h2>
-      <ReactMapGL
-        {...viewport}
-        // HIDE ACCESS TOKEN = process.env.REACT_APP_MAPBOX_TOKEN not working
-        mapboxApiAccessToken={
-          'pk.eyJ1Ijoia2hyaXNwdW56YWxhbiIsImEiOiJjazk0azhuNXowZHZyM2hvbThiZThnMTg4In0.WqfOYiH8M18koMjFjwZTEg'
-        }
-        mapStyle='mapbox://styles/mapbox/streets-v11'
-        onViewportChange={(viewport) => {
-          setViewport(viewport);
-        }}>
-        {props &&
-          props.locations.map((loc) =>
-            loc.lat && loc.long ? (
-              <Marker key={loc.id} latitude={loc.lat} longitude={loc.long}>
-                <button
-                  className='marker-btn'
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setSelectedPark(loc);
-                  }}>
-                  <img src={tent01} alt='MapMarker' />
-                </button>
-              </Marker>
-            ) : null,
-          )}
+    <div className='ui fluid container'>
+      {/* <Divider /> */}
+      <Segment placeholder>
+        <Header as='h2'>Your Adventure Map</Header>
 
-        {selectedPark ? (
-          <Popup
-            latitude={selectedPark.lat}
-            longitude={selectedPark.long}
-            onClose={() => {
-              setSelectedPark(null);
-            }}>
-            <>
-              <h5>{selectedPark.park}</h5>
-            </>
-          </Popup>
-        ) : null}
-      </ReactMapGL>
+        <ReactMapGL
+          {...viewport}
+          // HIDE ACCESS TOKEN = process.env.REACT_APP_MAPBOX_TOKEN not working
+          mapboxApiAccessToken={
+            'pk.eyJ1Ijoia2hyaXNwdW56YWxhbiIsImEiOiJjazk0azhuNXowZHZyM2hvbThiZThnMTg4In0.WqfOYiH8M18koMjFjwZTEg'
+          }
+          mapStyle='mapbox://styles/mapbox/streets-v11'
+          // style={ width: '100%' }
+          // className='mapboxgl-map mapboxgl-canvas-container'
+          onViewportChange={(viewport) => {
+            setViewport(viewport);
+          }}>
+          {props &&
+            props.locations.map((loc) =>
+              loc.lat && loc.long ? (
+                <Marker key={loc.id} latitude={loc.lat} longitude={loc.long}>
+                  <button
+                    className='marker-btn'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setSelectedPark(loc);
+                    }}>
+                    <img src={tent01} alt='MapMarker' />
+                  </button>
+                </Marker>
+              ) : null,
+            )}
+
+          {selectedPark ? (
+            <Popup
+              latitude={selectedPark.lat}
+              longitude={selectedPark.long}
+              onClose={() => {
+                setSelectedPark(null);
+              }}>
+              <>
+                <h5>{selectedPark.park}</h5>
+              </>
+            </Popup>
+          ) : null}
+        </ReactMapGL>
+      </Segment>
+      <Divider />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Adventure from '../../containers/Adventure';
+import { Header } from 'semantic-ui-react';
 
 const LocationShow = (props) => {
   const location = props.locations.find(
@@ -8,7 +9,9 @@ const LocationShow = (props) => {
 
   return (
     <div>
-      <h2>{location ? location.park : <p>LOADING</p>}</h2>
+      <Header as='h2' block textAlign='center'>
+        {location ? location.park : <p>LOADING</p>}
+      </Header>
       <Adventure location={location} />
     </div>
   );
