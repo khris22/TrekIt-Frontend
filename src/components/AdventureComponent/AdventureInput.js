@@ -50,10 +50,10 @@ export class AdventureInput extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <label>Memory: </label>
+          <label>Memories: </label>
           <Form.TextArea
             name='memo'
-            placeholder='Tell me all about your adventure...'
+            placeholder='Add memories about your adventure...'
             value={this.state.memo}
             onChange={this.handleChange}
           />
