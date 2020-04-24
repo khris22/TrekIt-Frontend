@@ -88,11 +88,13 @@ class GeoLocationInput extends Component {
         </Segment>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group widths='equal'>
+            {/* added readOnly={true} on form input to avoid invalid data */}
             <Form.Input
               fluid
               type='text'
-              label='Park:'
+              // label='Park:'
               placeholder='Name of Park'
+              readOnly={true}
               name='park'
               value={this.state.park}
               onChange={this.handleChange}
@@ -101,8 +103,9 @@ class GeoLocationInput extends Component {
             <Form.Input
               fluid
               type='number'
-              label='Latitude:'
+              // label='Latitude:'
               placeholder='Latitude'
+              readOnly={true}
               name='lat'
               value={this.state.lat}
               onChange={this.handleChange}
@@ -111,8 +114,9 @@ class GeoLocationInput extends Component {
             <Form.Input
               fluid
               type='number'
-              label='Longitude:'
+              // label='Longitude:'
               placeholder='Longitude'
+              readOnly={true}
               name='long'
               value={this.state.long}
               onChange={this.handleChange}

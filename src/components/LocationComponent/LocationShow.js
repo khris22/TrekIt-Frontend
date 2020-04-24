@@ -9,7 +9,7 @@ const LocationShow = (props) => {
 
   return (
     <div>
-      <Header as='h2' block textAlign='center'>
+      <Header as='h1' block textAlign='center'>
         {location ? location.park : <p>LOADING</p>}
       </Header>
       <Adventure location={location} />
