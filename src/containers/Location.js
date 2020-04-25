@@ -6,6 +6,7 @@ import { fetchLocations } from '../actions/locationActions';
 import { Route, Switch } from 'react-router-dom';
 import Mapbox from '../components/ReactMapGL/Mapbox';
 import GeoLocationInput from '../components/LocationComponent/GeoLocationInput';
+import { Divider } from 'semantic-ui-react';
 
 class Location extends Component {
   componentDidMount() {
@@ -16,6 +17,7 @@ class Location extends Component {
     // debugger;
     return (
       <div>
+        <Divider />
         <Switch>
           <Route
             path='/locations/:id'

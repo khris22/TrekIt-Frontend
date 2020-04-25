@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, Button } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 export class Navbar extends Component {
   render() {
     return (
       <div>
-        <Menu pointing secondary>
-          <Button>
-            <NavLink to='/'>Home</NavLink>
-          </Button>
-          <Button>
-            <NavLink to='/locations'>Your Dashboard</NavLink>
-          </Button>
-          <Button>
-            <NavLink to='/about'>About</NavLink>
-          </Button>
-        </Menu>
-        <br />
+        <div className='ui secondary menu'>
+          <NavLink to='/' className='content'>
+            <Button color='blue'>Home</Button>
+          </NavLink>
+
+          <NavLink to='/locations' className='content'>
+            <Button color='blue'>Your Dashboard</Button>
+          </NavLink>
+
+          <NavLink to='/about' className='content'>
+            <Button color='blue'>About</Button>
+          </NavLink>
+        </div>
       </div>
     );
   }

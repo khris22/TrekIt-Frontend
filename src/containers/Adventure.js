@@ -13,7 +13,12 @@ export class Adventure extends Component {
           location={this.props.location}
         />
         <Adventures
-          adventures={this.props.location && this.props.location.adventures}
+          adventures={
+            this.props.location &&
+            this.props.location.adventures.sort((a, b) =>
+              a.created_at < b.created_at ? 1 : -1,
+            )
+          }
           // deleteAdventure={this.props.deleteAdventure}
         />
       </div>
