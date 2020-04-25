@@ -22,7 +22,7 @@ function Home() {
         <Header as='h3'>Keep your adventures alive with trekIt!</Header>
 
         <Link to='/locations' className='content'>
-          <Button size='massive' positive>
+          <Button size='massive' color='green'>
             Start trekkingIt!
           </Button>
         </Link>

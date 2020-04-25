@@ -29,6 +29,9 @@ export class About extends Component {
           <p>
             If you have any suggestions or comments, please feel free to click
             on this app's repository here:{' '}
+            <a href='https://github.com/khris22/TrekIt-Frontend'>
+              trekIt Github
+            </a>
           </p>
           <p>Suggestions and comments are highly appreciated, thank you!</p>
           <Header as='h2'>Happy trekkingIt!</Header>

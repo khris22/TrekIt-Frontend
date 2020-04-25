@@ -11,6 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className='ui container App '>
+        <br />
         <h1>trekIt</h1>
         <Navbar />
         <Switch>
