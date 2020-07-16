@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
 import Geocoder from 'react-mapbox-gl-geocoder';
-// import Geocoder from 'react-map-gl-geocoder';
-// import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { connect } from 'react-redux';
 import { addLocation } from '../../actions/locationActions';
 import { Form, Segment } from 'semantic-ui-react';
 
-// const queryParams = {
-//   country: 'us',
-// };
-
 class GeoLocationInput extends Component {
-  //   state = {
-  //     viewport: {},
-  //   };
   state = {
     park: '',
     lat: '',
@@ -27,9 +18,6 @@ class GeoLocationInput extends Component {
     console.log('Latitude: ', location.geometry.coordinates[1]);
     console.log('Longitude: ', location.geometry.coordinates[0]);
 
-    // this.setState({
-    //   viewport,
-    // });
     this.setState({
       park: location.text,
       lat: location.geometry.coordinates[1],
@@ -65,7 +53,6 @@ class GeoLocationInput extends Component {
   );
 
   render() {
-    // const { viewport } = this.state;
     return (
       <div>
         <Segment color='blue' tertiary textAlign='center'>
@@ -75,16 +62,10 @@ class GeoLocationInput extends Component {
             }
             onSelected={this.onSelected}
             viewport={this.state}
-            // value={this.state || ''}
             hideOnSelect={true}
-            // updateInputOnSelect={true}
             initialInputValue={this.state.input}
             inputComponent={this.myInput}
-            clearOnBlur={true}
-            // className='react-geocoder'
-            // itemComponent={this.itemsShow}
-            // queryParams={queryParams}
-          ></Geocoder>
+            clearOnBlur={true}></Geocoder>
         </Segment>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group widths='equal'>

@@ -13,7 +13,6 @@ function Home() {
           width: 750,
           height: 550,
           position: 'responsive',
-          // opacity: 0.5,
           display: 'block',
           backgroundImage: `url(${bg})`,
         }}>

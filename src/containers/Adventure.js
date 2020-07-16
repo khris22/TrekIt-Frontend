@@ -19,7 +19,6 @@ export class Adventure extends Component {
               a.created_at < b.created_at ? 1 : -1,
             )
           }
-          // deleteAdventure={this.props.deleteAdventure}
         />
       </div>
     );

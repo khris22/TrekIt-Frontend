@@ -1,16 +1,8 @@
 import React from 'react';
-
 import { Divider } from 'semantic-ui-react';
-// import Moment from 'react-moment';
 import AdventureCard from './AdventureCard';
 
 const Adventures = (props) => {
-  // console.log(props);
-
-  // const handleEdit = (adv) => {
-  //   console.log('EDIT ADVENTURE', adv);
-  // };
-
   return (
     <div>
       <Divider />
@@ -24,7 +16,3 @@ const Adventures = (props) => {
 };
 
 export default Adventures;
-// export default connect(null, { deleteAdventure })(Adventures);
-// Fragment - can reduce a lot of unnecessary DOM bloat
-// <React.Fragment key={adv.id}
-// </React.Fragment>

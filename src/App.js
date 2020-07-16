@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Location from '../src/containers/Location';
-// import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from './components/NavbarComponents/Navbar';
 import About from './components/NavbarComponents/About';

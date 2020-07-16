@@ -14,7 +14,6 @@ class Location extends Component {
   }
 
   render() {
-    // debugger;
     return (
       <div>
         <Divider />
@@ -52,7 +51,7 @@ class Location extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  locations: state.locations.sort((a, b) => (a.park > b.park ? 1 : -1)),
+  locations: state.sort((a, b) => (a.park > b.park ? 1 : -1)),
 });
 
 export default connect(mapStateToProps, { fetchLocations })(Location);

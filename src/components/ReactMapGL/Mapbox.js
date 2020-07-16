@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import tent01 from '../../tent01.svg';
-// import Geocoder from 'react-map-gl-geocoder';
-// import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { Segment, Header, Divider } from 'semantic-ui-react';
 
 function Mapbox(props) {
@@ -18,10 +16,8 @@ function Mapbox(props) {
 
   return (
     <div className='ui fluid container'>
-      {/* <Divider /> */}
       <Segment placeholder>
         <Header as='h2'>Your Adventure Map</Header>
-
         <ReactMapGL
           {...viewport}
           // HIDE ACCESS TOKEN = process.env.REACT_APP_MAPBOX_TOKEN not working
@@ -29,8 +25,6 @@ function Mapbox(props) {
             'pk.eyJ1Ijoia2hyaXNwdW56YWxhbiIsImEiOiJjazk0azhuNXowZHZyM2hvbThiZThnMTg4In0.WqfOYiH8M18koMjFjwZTEg'
           }
           mapStyle='mapbox://styles/mapbox/streets-v11'
-          // style={ width: '100%' }
-          // className='mapboxgl-map mapboxgl-canvas-container'
           onViewportChange={(viewport) => {
             setViewport(viewport);
           }}>
