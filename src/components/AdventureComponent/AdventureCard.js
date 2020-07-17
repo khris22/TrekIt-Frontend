@@ -15,7 +15,7 @@ import AdventureEdit from './AdventureEdit';
 
 export class AdventureCard extends Component {
   constructor(props) {
-    console.log('ADVENTURE CARD', props);
+    // console.log('ADVENTURE CARD', props);
     super(props);
     this.state = {
       isEditable: false,

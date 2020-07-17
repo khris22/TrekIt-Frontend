@@ -33,3 +33,17 @@ export const deleteLocation = (locId) => {
       );
   };
 };
+
+// function connect(arges, args32) {
+//   // thunk checks if fetchLocations() returns an object or a function
+//   // if it's an object, do this:
+//   dispatch(fetchLocations());
+
+//   //if it's a function, do this:
+//   dispatch(fetchLocations()(dispatch));
+// }
+
+// function dispatch(action){
+//   state = changeState(state, action)
+//   render()
+// }

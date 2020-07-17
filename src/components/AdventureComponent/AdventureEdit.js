@@ -5,7 +5,7 @@ import { updateAdventure } from '../../actions/adventureActions';
 
 export class AdventureEdit extends Component {
   constructor(props) {
-    console.log('EDIT', props);
+    // console.log('EDIT', props);
     super(props);
     this.state = {
       title: this.props.adventure.title,
