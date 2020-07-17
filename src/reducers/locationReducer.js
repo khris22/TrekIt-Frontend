@@ -1,27 +1,23 @@
-const locationReducer = (state = { locations: [] }, action) => {
+const locationReducer = (state = [], action) => {
   switch (action.type) {
     case 'FETCH_LOCATIONS':
-      return { ...state, locations: action.payload };
+      return action.payload;
 
     case 'ADD_LOCATION':
-      return { ...state, locations: [...state.locations, action.payload] };
+      return [...state, action.payload];
 
     case 'DELETE_LOCATION':
-      let newLocationsArr = state.locations.filter(
-        (loc) => loc.id !== action.payload.id,
-      );
-
-      return { ...state, locations: newLocationsArr };
+      return state.filter((loc) => loc.id !== action.payload.id);
 
     case 'ADD_ADVENTURE':
-      let addAdvOnlocations = state.locations.map((loc) => {
+      let addAdvOnlocations = state.map((loc) => {
         if (loc.id === action.payload.id) {
           return action.payload;
         } else {
           return loc;
         }
       });
-      return { ...state, locations: addAdvOnlocations };
+      return addAdvOnlocations;
 
     case 'DELETE_ADVENTURE':
       let deletedAdvOnLocation = state.locations.map((loc) => {
@@ -31,13 +27,9 @@ const locationReducer = (state = { locations: [] }, action) => {
           return loc;
         }
       });
-      return {
-        ...state,
-        locations: deletedAdvOnLocation,
-      };
+      return deletedAdvOnLocation;
 
     case 'UPDATE_ADVENTURE':
-      console.log('INSIDE UPDATE ADVENTURE');
       let locationsWithEditedAdventure = state.locations.map((loc) => {
         if (loc.id === action.payload.id) {
           return action.payload;
@@ -45,10 +37,7 @@ const locationReducer = (state = { locations: [] }, action) => {
           return loc;
         }
       });
-      return {
-        ...state,
-        locations: locationsWithEditedAdventure,
-      };
+      return locationsWithEditedAdventure;
 
     default:
       return state;
